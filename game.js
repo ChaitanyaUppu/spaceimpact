@@ -18,13 +18,13 @@ let gameRunning = false;
 let score = 0;
 let playerHealth = 100;
 
-// Player ship
+
 const player = {
   x: 40,
   y: canvas.height / 2,
   width: 24,
   height: 10,
-  speed: 4,
+  speed: 2,
   color: '#88aaff'
 };
 
@@ -55,7 +55,7 @@ function initStars() {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 2 + 1,
-      speed: Math.random() * 2 + 1
+      speed: (Math.random() * 2 + 1) * 0.5 
     });
   }
 }
@@ -180,7 +180,7 @@ function updatePlayer() {
       y: player.y + player.height / 2,
       width: 10,
       height: 2,
-      speed: 7,
+      speed: 3.5, // Reduced from 7
       color: '#88ffff'
     });
     lastPlayerShot = now;
@@ -233,39 +233,39 @@ function spawnEnemy() {
     let enemyConfig;
     
     if (type === 0) {
-      // Small fast enemy
+      // Small fast enemy - SPEED REDUCED BY 50%
       enemyConfig = {
         x: canvas.width,
         y: Math.random() * (canvas.height - 20) + 10,
         width: 16,
         height: 8,
-        speed: 3,
+        speed: 1.5, // Reduced from 3
         health: 1,
         color: '#ff5555',
         points: 10,
         shootChance: 0.002
       };
     } else if (type === 1) {
-      // Medium enemy
+      // Medium enemy - SPEED REDUCED BY 50%
       enemyConfig = {
         x: canvas.width,
         y: Math.random() * (canvas.height - 30) + 15,
         width: 24,
         height: 12,
-        speed: 2,
+        speed: 1, // Reduced from 2
         health: 2,
         color: '#ffaa55',
         points: 20,
         shootChance: 0.004
       };
     } else {
-      // Large slow enemy
+      // Large slow enemy - SPEED REDUCED BY 50%
       enemyConfig = {
         x: canvas.width,
         y: Math.random() * (canvas.height - 40) + 20,
         width: 36,
         height: 20,
-        speed: 1,
+        speed: 0.5, // Reduced from 1
         health: 4,
         color: '#ff5599',
         points: 30,
@@ -292,7 +292,7 @@ function updateEnemies() {
         y: enemies[i].y + enemies[i].height / 2,
         width: 8,
         height: 2,
-        speed: 5,
+        speed: 2.5, // Reduced from 5
         color: '#ff8888'
       });
     }
