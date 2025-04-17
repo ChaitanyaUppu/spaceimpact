@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Space Impact Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas"></canvas>
+    <div id="score-display">Score: 0</div>
+    <div id="health-display">Health: 100%</div>
+    
+    <div id="start-screen">
+      <h2>SPACE IMPACT</h2>
+      <p>Classic Nokia Style</p>
+      <button id="start-button">START GAME</button>
+      <div class="controls">
+        Arrow keys or touch controls<br>
+        Space/touch to shoot
+      </div>
+    </div>
+    
+    <div id="game-over">
+      <h2>GAME OVER</h2>
+      <p id="final-score">Your score: 0</p>
+      <button id="restart-button">PLAY AGAIN</button>
+    </div>
+  </div>
+  
+  <div id="mobile-controls">
+    <div id="controls-label">GAME CONTROLS</div>
+    <div class="direction-pad">
+      <div class="direction-button" id="up-button">↑</div>
+      <div class="direction-button" id="down-button">↓</div>
+      <div class="direction-button" id="left-button">←</div>
+      <div class="direction-button" id="right-button">→</div>
+    </div>
+    <div id="shoot-button">FIRE</div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
